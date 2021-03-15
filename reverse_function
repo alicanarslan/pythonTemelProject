@@ -1,0 +1,10 @@
+def reverse(t):
+    for i in range(0, len(t)):
+        if type(t[i]) == list:
+            a = t[i]
+            t[i] = a[::-1]
+    t = t[::-1]
+    return t
+
+k = [4, 2, 3, "ali", [12,45,52], 6, ["nehir"]]
+print(reverse(k))
