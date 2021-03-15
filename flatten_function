@@ -1,0 +1,30 @@
+def flat(t):
+    flat_list = []
+    a = 0
+    for sublist in t:
+        if type(sublist) != list:
+            flat_list.append(sublist)
+        while type(sublist) == list:
+            for i in range(len(sublist)):
+                a = sublist[i]
+                flat_list.append(a)
+            sublist = str(sublist)
+    return flat_list
+
+def flat_check(t):
+    l = flat(t)
+    for i in range (0,9999):
+        a=0
+        l = flat(l)
+        for s in l:
+            if type(s) == list:
+                a = 0
+                break
+            else:
+                a = 1
+        if a != 0:
+            break
+    return l
+
+k = ["asd",[8],3,[[[[[[[[[[[[[[24,5,[32,[12]]]]]]]]]]]]]]]],[5],[[[35,[5]]],[4],5]]
+print(flat_check(k))
